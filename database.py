@@ -1,13 +1,19 @@
 import psycopg
 import sys
+# Importa as funções para carregar variáveis do .env
+from dotenv import load_dotenv
+import os
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
 
 # --- 1. Configurações da Conexão ---
-# As variáveis são autodocumentáveis pelos seus nomes.
-DB_HOST = "localhost"
-DB_PORT = "5432" 
-DB_NAME = "postgres"
-DB_USER = "joaog"
-DB_PASS = "bmj1212"
+# As variáveis são lidas do ambiente do sistema (que foi carregado pelo load_dotenv())
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT") 
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASS = os.getenv("DB_PASS")
 
 # --- 2. Função de Conexão ---
 
