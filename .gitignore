@@ -1,2 +1,7 @@
-.venv
-__pycache__
+# Arquivos de Configuração de Credenciais
+.env
+
+# Arquivos de Cache e Build do Python
+__pycache__/
+*.pyc
+.venv/ 
