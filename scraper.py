@@ -97,7 +97,7 @@ def scrape_site(config: SiteConfig, print_label: str, headers: dict):
         print(f"AVISO: Nenhum container encontrado para {print_label}. O seletor '{config.container_selector}' pode estar errado ou a página foi bloqueada.")
         return []
 
-    # Lista para armazenar todas as notícias coletadas
+    
     found_news = []
     
     # Itera sobre cada container encontrado
