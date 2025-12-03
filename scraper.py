@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time 
 # Assume-se que 'db_utils' lida com a conexão e inserção no PostgreSQL
-from db_utils import create_news_table, bulk_insert_news 
+from database import create_news_table, bulk_insert_news 
 
 # --- Classes e Configurações ---
 
