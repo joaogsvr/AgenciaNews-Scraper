@@ -1,28 +1,17 @@
-# Define os serviços (contêineres) que compõem sua aplicação
 services:
-  # Nome do serviço: 'db' (representa o contêiner do banco de dados)
+  # Serviço do banco de dados (PostgreSQL)
   db:
-    # Imagem Docker a ser usada: PostgreSQL versão 15
     image: postgres:15 
-    # Define um nome fixo para o contêiner
     container_name: bmj_project_db
-    # Variáveis de ambiente passadas para o contêiner
     environment:
-      # Nome do usuário do PostgreSQL
       - POSTGRES_USER=joaog
-      # Senha do usuário do PostgreSQL
       - POSTGRES_PASSWORD=bmj1212
-      # Nome do banco de dados inicial a ser criado
       - POSTGRES_DB=postgres
-    # Mapeamento de portas
     ports:
-      # Mapeia a porta 5432 do host para a porta 5432 do contêiner
       - "5432:5432" 
-    # Gerenciamento de volumes (persistência de dados)
     volumes:
-      # Mapeia o volume 'postgres_data' do Docker para o diretório de dados interno do PostgreSQL
       - postgres_data:/var/lib/postgresql/data 
-# Define volumes nomeados que serão usados pelos serviços
+
+# Volumes para garantir a persistência dos dados
 volumes:
-  # Define o volume nomeado para a persistência dos dados do banco
   postgres_data:
